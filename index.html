@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meesho Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #720d5d;
+
+}
+
+header input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.top-nav a:hover {
+    background-color: #f1f1f1;
+}
+
+#content {
+    display: flex;
+    padding: 20px;
+}
+
+.filters {
+    width: 20%;
+    margin-right: 2%;
+}
+
+.filters h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.filters label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.category-filter input {
+    margin-right: 8px;
+}
+
+.products-section {
+    width: 78%;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.products-header h2 {
+    margin: 0;
+}
+
+.sort-by {
+    font-size: 14px;
+}
+
+.sort-by select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    width: 23%;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: 180px; /* Fixing image height */
+    object-fit: cover;
+}
+
+.product p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.rating {
+    font-size: 14px;
+    color: #000; /* Neutral color for reviews */
+}
+
+.rating-box {
+    background-color: green;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.free-delivery {
+    font-size: 14px;
+    color: #000;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header with Search Bar (now above the top-nav) -->
+    <header>
+        <div class="logo">meesho</div>
+        <input type="text" placeholder="Try Saree, Kurti or Search by Product Code">
+        <nav>
+            <a href="#">Become a Supplier</a>
+            <a href="#">Newsroom</a>
+            <a href="#">Profile</a>
+            <a href="#">Cart</a>
+        </nav>
+    </header>
+
+    <!-- Upper Navigation Bar (now below the search header) -->
+    <nav class="top-nav">
+        <a href="#">Women Ethnic</a>
+        <a href="#">Women Western</a>
+        <a href="#">Men</a>
+        <a href="#">Kids</a>
+        <a href="#">Home & Kitchen</a>
+        <a href="#">Beauty & Health</a>
+        <a href="#">Jewellery & Accessories</a>
+        <a href="#">Bags & Footwear</a>
+        <a href="#">Electronics</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="content">
+        <!-- Filters -->
+        <aside class="filters">
+            <h3>Filters</h3>
+
+            <div class="category-filter">
+                <div class="sort-by">
+                    <label for="sort">Sort by: </label>
+                    <select id="sort">
+                        <option value="relevance">Relevance</option>
+                        <option value="price-low-to-high">Price: Low to High</option>
+                        <option value="price-high-to-low">Price: High to Low</option>
+                        <option value="popularity">Popularity</option>
+                    </select>
+                </div>
+                <br>
+                <h4>Category</h4>
+                <label><input type="checkbox" name="category" value="Women T-shirts"> Women T-shirts</label><br>
+                <label><input type="checkbox" name="category" value="Women Tops And Tunics"> Women Tops And Tunics</label><br>
+                <label><input type="checkbox" name="category" value="Bedsheets"> Bedsheets</label><br>
+                <label><input type="checkbox" name="category" value="Bike Covers"> Bike Covers</label><br>
+                <label><input type="checkbox" name="category" value="Blouses"> Blouses</label><br>
+                <label><input type="checkbox" name="category" value="Cups & Mugs"> Cups & Mugs</label><br>
+                <label><input type="checkbox" name="category" value="Dupattas"> Dupattas</label><br>
+                <label><input type="checkbox" name="category" value="Earrings & Studs"> Earrings & Studs</label><br>
+            </div>
+        </aside>
+
+        <!-- Products Section -->
+        <section class="products-section">
+            <div class="products-header">
+                <h2>Products For You</h2>
+                
+            </div>
+            <div class="products">
+                <div class="product">
+                    
+                    <img src="Panda.jpeg" alt="Panda Bag">
+                    Trendy Alluring Women Bag
+                    <p><b>₹133</b> onwards</p>
+                    <p class="rating"><span class="rating-box">★ 3.7</span> | 43,503 Reviews</p>
+                    <p class="free-delivery">Free Delivery</p>
+                </div>
+                <div class="product">
+                    <img src="Extension.webp" alt="Extension Board">
+                    Useful Extension Boards
+                    <p><b>₹156</b> onwards</p>
+                    <p class="rating"><span class="rating-box">★ 3.7</span> | 97,707 Reviews</p>
+                    <p class="free-delivery">Free Delivery</p>
+                </div>
+                <div class="product">
+                    <img src="top.jpeg" alt="Yellow Shirt">
+                    Urbane Glamorous Women Tshirt
+                    <p><b>₹162</b> onwards</p>
+                    <p class="rating"><span class="rating-box">★ 3.7</span> | 22,796 Reviews</p>
+                    <p class="free-delivery">Free Delivery</p>
+                </div>
+                <div class="product">
+                    <img src="shorts.jpeg" alt="Women Shorts">
+                    Stylish Trendy Women Shorts
+                    <p><b>₹219</b> onwards</p>
+                    <p class="rating"><span class="rating-box">★ 4.1</span> | 10,119 Reviews</p>
+                    <p class="free-delivery">Free Delivery</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
